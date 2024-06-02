@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var ammo = 0
-var current_weapon = "knife"
+var current_weapon = "fist"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +12,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_select"):
 		if current_weapon == "knife":
 			$AnimatedSprite2D.play("stab")
+		elif current_weapon == "fist":
+			$AnimatedSprite2D.play("middle_finger")
 		elif current_weapon == "gun":
 			if ammo > 0:
 				$AnimatedSprite2D.play("shoot")
@@ -20,5 +22,7 @@ func _process(delta):
 func _on_AnimatedSprite2D_animation_finished():
 	if current_weapon == "knife":
 		$AnimatedSprite2D.play("knife_idle")
+	elif current_weapon == "fist":
+		$AnimatedSprite2D.play("fist_idle")
 	elif current_weapon == "gun":
 		$AnimatedSprite2D.play("gun_idle")

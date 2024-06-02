@@ -1,0 +1,152 @@
+[gd_scene load_steps=22 format=3 uid="uid://c1dhct4mkhvrw"]
+
+[ext_resource type="Texture2D" uid="uid://xjxdneh0xdax" path="res://other/tarcisio R08-Sheet.png" id="1_cmqjr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_irsne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcdos"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(0, 0, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w74qu"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(448, 0, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x5om"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(896, 0, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn2rx"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(1344, 0, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y568"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(1792, 0, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b5c0"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(0, 256, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrfa"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(448, 256, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ttx"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(896, 256, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hnft"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(1344, 256, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d701b"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(1792, 256, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2w4l"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(0, 512, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74otc"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(448, 512, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0suw6"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(896, 512, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exg7y"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(1344, 512, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hbf1"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(1792, 512, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puhwm"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(0, 768, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kndqo"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(448, 768, 448, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpjan"]
+atlas = ExtResource("1_cmqjr")
+region = Rect2(896, 768, 448, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86p65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcdos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w74qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x5om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn2rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y568")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b5c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqrfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ttx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hnft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d701b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2w4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74otc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0suw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exg7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hbf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puhwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kndqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpjan")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[node name="Ratarcisio" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_irsne")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_86p65")
+animation = &"walk"
+autoplay = "walk"

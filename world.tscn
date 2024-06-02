@@ -1,23 +1,31 @@
-[gd_scene load_steps=14 format=3 uid="uid://cm2ende5nb5ml"]
+[gd_scene load_steps=16 format=3 uid="uid://cm2ende5nb5ml"]
 
 [ext_resource type="PackedScene" uid="uid://d3rxo3tcaxol7" path="res://player.tscn" id="1_680ci"]
 [ext_resource type="Texture2D" uid="uid://blh7kjao2i32l" path="res://wolf3d/grey stone wall.png" id="1_eeipp"]
+[ext_resource type="PackedScene" uid="uid://d1rjldujhnhq7" path="res://enemy.tscn" id="3_rxu0b"]
+[ext_resource type="PackedScene" uid="uid://c1dhct4mkhvrw" path="res://ratarcisio.tscn" id="4_cgwxs"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h3pxb"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q57r2"]
+sky_top_color = Color(0.313726, 0, 0, 1)
+sky_horizon_color = Color(0.4, 0, 0.227451, 1)
+sky_curve = 0.126134
 
-[sub_resource type="Sky" id="Sky_7wyxr"]
-sky_material = SubResource("ProceduralSkyMaterial_h3pxb")
+[sub_resource type="Sky" id="Sky_osmty"]
+sky_material = SubResource("ProceduralSkyMaterial_q57r2")
 
-[sub_resource type="Environment" id="Environment_qldm7"]
+[sub_resource type="Environment" id="Environment_387bx"]
 background_mode = 2
-sky = SubResource("Sky_7wyxr")
+sky = SubResource("Sky_osmty")
 tonemap_mode = 2
+adjustment_brightness = 1.79
+adjustment_contrast = 6.22
+adjustment_saturation = 6.85
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgr51"]
 albedo_texture = ExtResource("1_eeipp")
+anisotropy = -0.02
 uv1_scale = Vector3(30, 30, 1)
+grow_amount = 2.877
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vpfml"]
 
@@ -45,11 +53,12 @@ uv1_scale = Vector3(30, 5, 1)
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qldm7")
+environment = SubResource("Environment_387bx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+sky_mode = 2
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
@@ -82,3 +91,18 @@ material_override = SubResource("StandardMaterial3D_dg1sj")
 mesh = SubResource("BoxMesh_w0o7c")
 
 [node name="Player" parent="." instance=ExtResource("1_680ci")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_rxu0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_rxu0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43854, 0, -6.23749)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_rxu0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43854, 0, -0.310824)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_rxu0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19734, 0, -4.93842)
+
+[node name="Ratarcisio" parent="." instance=ExtResource("4_cgwxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60807, 1, -3.8929)

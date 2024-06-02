@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgw61ymufvujr"
-path.s3tc="res://.godot/imported/guard.png-889ac110994cce1b508824a46689ebe2.s3tc.ctex"
+uid="uid://xjxdneh0xdax"
+path.s3tc="res://.godot/imported/tarcisio R08-Sheet.png-25e3d991b29a89dd62b33c6f122b7966.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://wolf3d/guard.png"
-dest_files=["res://.godot/imported/guard.png-889ac110994cce1b508824a46689ebe2.s3tc.ctex"]
+source_file="res://other/tarcisio R08-Sheet.png"
+dest_files=["res://.godot/imported/tarcisio R08-Sheet.png-25e3d991b29a89dd62b33c6f122b7966.s3tc.ctex"]
 
 [params]
 

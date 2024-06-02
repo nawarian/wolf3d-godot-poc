@@ -1,7 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://21ke7xuya8ci"]
+[gd_scene load_steps=20 format=3 uid="uid://21ke7xuya8ci"]
 
 [ext_resource type="Texture2D" uid="uid://07s3pkms5w1t" path="res://wolf3d/wolfweapons.png" id="1_5fx5e"]
 [ext_resource type="Script" path="res://ui.gd" id="1_x5rs1"]
+[ext_resource type="Texture2D" uid="uid://d4hnvmagqka2a" path="res://other/fist-001.png" id="2_aqkeu"]
+[ext_resource type="Texture2D" uid="uid://co2rysl5ab4le" path="res://other/circle-03.png" id="3_0vu7e"]
+[ext_resource type="Texture2D" uid="uid://cww8m4q71b6lf" path="res://other/simeone001.png" id="4_6fcjs"]
+[ext_resource type="Texture2D" uid="uid://c5uq6roisjrru" path="res://other/fist-002.png" id="4_c2cp6"]
+[ext_resource type="Texture2D" uid="uid://br5kqpcondy3n" path="res://other/simeone002.png" id="5_33syp"]
+[ext_resource type="Texture2D" uid="uid://od7qkyhn8nkv" path="res://other/fist-003.png" id="5_gx4b1"]
+[ext_resource type="Texture2D" uid="uid://d32wra3vngw4j" path="res://other/simeone003.png" id="6_701h3"]
+[ext_resource type="Texture2D" uid="uid://fb3w1omdmpk2" path="res://other/fist-004.png" id="6_f8q25"]
+[ext_resource type="Texture2D" uid="uid://2enj534diofh" path="res://other/simeone004.png" id="7_32h3l"]
+[ext_resource type="Texture2D" uid="uid://cq5l1pbeqjd10" path="res://other/fist-005.png" id="7_65yku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blyuo"]
 atlas = ExtResource("1_5fx5e")
@@ -27,10 +37,38 @@ region = Rect2(256, 0, 64, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_aqkeu")
+}],
+"loop": true,
+"name": &"fist_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_blyuo")
 }],
 "loop": false,
 "name": &"knife_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aqkeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c2cp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gx4b1")
+}, {
+"duration": 3.0,
+"texture": ExtResource("6_f8q25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_65yku")
+}],
+"loop": false,
+"name": &"middle_finger",
 "speed": 5.0
 }, {
 "frames": [{
@@ -51,15 +89,40 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_soprs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6fcjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_33syp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6fcjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_701h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_32h3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_701h3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_x5rs1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 499)
-scale = Vector2(5, 5)
+position = Vector2(541, 387)
+scale = Vector2(0.277778, 0.277778)
 sprite_frames = SubResource("SpriteFrames_gv7yb")
-animation = &"knife_idle"
-autoplay = "knife_idle"
+animation = &"middle_finger"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 7
@@ -68,8 +131,43 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -576.0
-offset_top = -69.0
+offset_top = -136.0
 offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.046891, 0.046891, 0.545174, 1)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0.227451, 0.0784314, 0.0509804, 1)
+
+[node name="Circle-03" type="Sprite2D" parent="."]
+position = Vector2(571, 319)
+scale = Vector2(0.304687, 0.304687)
+texture = ExtResource("3_0vu7e")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 503.0
+offset_top = 512.0
+offset_right = 635.0
+offset_bottom = 648.0
+color = Color(0.552941, 0.552941, 0.552941, 1)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 584)
+scale = Vector2(0.240876, 0.240876)
+sprite_frames = SubResource("SpriteFrames_soprs")
+autoplay = "default"
+frame_progress = 0.778775
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 644.0
+offset_top = 520.0
+offset_right = 1140.0
+offset_bottom = 639.0
+color = Color(0.411765, 0.164706, 0.121569, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 7.0
+offset_top = 520.0
+offset_right = 495.0
+offset_bottom = 639.0
+color = Color(0.411765, 0.164706, 0.121569, 1)
